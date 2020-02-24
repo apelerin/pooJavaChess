@@ -9,6 +9,10 @@ import java.util.List;
 public class ChessModel implements IChess {
     private static ChessModel single_instance = null;
 
+    private ChessModel() {
+
+    }
+
     public static ChessModel getInstance()
     {
         if (single_instance == null)
