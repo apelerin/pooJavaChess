@@ -71,4 +71,5 @@ public class ChessModel implements IChess {
     public long getPlayerDuration(ChessColor color, boolean isPlaying) {
         return 0;
     }
+
 }

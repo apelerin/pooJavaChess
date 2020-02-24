@@ -1,11 +1,19 @@
 package fr.rphstudio.chess.game;
 
-import fr.rphstudio.chess.interf.IChess;
 
-public class Piece {
 
-    private IChess.ChessType chessType;
-    private IChess.ChessColor chessColor;
+public class Piece{
+
+    private ChessModel.ChessType chessType;
+    private ChessModel.ChessColor chessColor;
+
+    public ChessModel.ChessType getType() {
+        return this.chessType;
+    }
+    public ChessModel.ChessColor getColor() {
+        return this.chessColor;
+    }
 
 
 }
+
