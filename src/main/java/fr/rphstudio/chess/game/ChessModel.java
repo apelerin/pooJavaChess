@@ -3,12 +3,14 @@ package fr.rphstudio.chess.game;
 import fr.rphstudio.chess.interf.EmptyCellException;
 import fr.rphstudio.chess.interf.IChess;
 import fr.rphstudio.chess.interf.OutOfBoardException;
+import fr.rphstudio.chess.game.Board;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ChessModel implements IChess {
     private static ChessModel single_instance = null;
+    private Board chessBoard = new Board();
 
     private ChessModel() {
 
