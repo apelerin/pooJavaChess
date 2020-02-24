@@ -2,6 +2,7 @@ package fr.rphstudio.chess.game;
 
 
 
+
 public class Piece{
 
     private ChessModel.ChessType chessType;
