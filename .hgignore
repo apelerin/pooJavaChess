@@ -1,0 +1,11 @@
+syntax: glob
+lib/*
+target/*
+sprites/*
+favicon.ico
+icon16x16.png
+icon32x32.png
+info/version.txt
+music/*
+sfx/*
+_tmp_/*
