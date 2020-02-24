@@ -9,3 +9,4 @@ info/version.txt
 music/*
 sfx/*
 _tmp_/*
+.DS_Store

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8aba6140-249c-4803-8bdd-1d311e414562" name="Default" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="8aba6140-249c-4803-8bdd-1d311e414562" name="Default" comment="add commit">
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/Piece.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +16,14 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -24,25 +33,22 @@
   </component>
   <component name="ProjectId" id="1YFMAgVEmC2mZ4w62FUHXcP2nZf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Mercurial" />
   </component>
   <component name="RunManager">
     <configuration name="Compile and Run Chess Project" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="13" />
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="fr.rphstudio.chess.launcher.MainLauncher" />
       <module name="Chess" />
@@ -75,6 +81,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -85,8 +103,56 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582473974881</updated>
+      <workItem from="1582541612940" duration="52000" />
+      <workItem from="1582541688122" duration="8453000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582541797315">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1582541797315" />
+    <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser" timestamp="1582548734396">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="533" y="166" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1582548734396" />
+    <state x="570" y="346" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1582541728639">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="570" y="346" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1440.900@0.0.1440.900" timestamp="1582541728639" />
+    <state x="350" y="52" key="CommitChangelistDialog2" timestamp="1582549189734">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="350" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1582549189734" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1582548181457">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1582548181457" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1582548181456">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1582548181456" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1582548181455">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1582548181455" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1582548181456">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1582548181456" />
+    <state x="191" y="60" key="SettingsEditor" timestamp="1582541737229">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="191" y="60" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1582541737229" />
+    <state x="186" y="81" key="SettingsEditor/0.23.1404.877@0.23.1404.877" timestamp="1582541707431" />
+    <state x="356" y="275" key="com.intellij.ide.util.TipDialog" timestamp="1582541688607">
+      <screen x="0" y="23" width="1404" height="877" />
+    </state>
+    <state x="356" y="275" key="com.intellij.ide.util.TipDialog/0.23.1404.877@0.23.1404.877" timestamp="1582541688607" />
   </component>
   <component name="hg4idea.settings">
     <option name="CHECK_INCOMING_OUTGOING" value="true" />
