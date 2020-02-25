@@ -33,14 +33,24 @@ public class ChessModel implements IChess {
     public ChessType getPieceType(ChessPosition p) throws EmptyCellException, OutOfBoardException {
         int positionX = p.x;
         int positionY = p.y;
-        return chessBoard.getPieceList().get(positionX).get(positionY).getType();
+        try {
+            return chessBoard.getPieceList()[positionX][positionY].getType();
+        }
+        catch (NullPointerException npe) {
+            throw new EmptyCellException();
+        }
     }
 
     @Override
     public ChessColor getPieceColor(ChessPosition p) throws EmptyCellException, OutOfBoardException {
         int positionX = p.x;
         int positionY = p.y;
-        return chessBoard.getPieceList().get(positionX).get(positionY).getColor();
+        try {
+            return chessBoard.getPieceList()[positionX][positionY].getColor();
+        }
+        catch (NullPointerException npe) {
+            throw new EmptyCellException();
+        }
     }
 
     @Override
