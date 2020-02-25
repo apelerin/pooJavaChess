@@ -1,8 +1,10 @@
 package fr.rphstudio.chess.game;
 
+import fr.rphstudio.chess.game.piece.PawnMove;
 import fr.rphstudio.chess.interf.EmptyCellException;
 import fr.rphstudio.chess.interf.IChess.ChessType;
 import fr.rphstudio.chess.interf.IChess.ChessColor;
+import fr.rphstudio.chess.interf.IMove;
 
 import java.util.ArrayList;
 import java.util.HashMap;
