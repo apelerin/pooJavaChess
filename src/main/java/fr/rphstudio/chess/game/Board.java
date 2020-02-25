@@ -14,8 +14,8 @@ public class Board {
     private int rowInitWhitePawn = 6;
     private int rowInitBlackPawn = 1;
 
-    public Piece[][] getPieceList(int x, int y) {
-        return pieceList;
+    public Piece getPiece(int x, int y) {
+        return pieceList[x][y];
     }
 
     HashMap<int[], ChessType> mapWhitePiece = new HashMap<int[], ChessType>() {
