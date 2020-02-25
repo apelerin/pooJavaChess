@@ -10,11 +10,11 @@ import java.util.Map;
 import static fr.rphstudio.chess.interf.IChess.ChessType.*;
 
 public class Board {
-    private ArrayList<ArrayList<Piece>> pieceList;
+    private Piece[][] pieceList = new Piece[8][8];
     private int rowInitWhitePawn = 6;
     private int rowInitBlackPawn = 1;
 
-    public ArrayList<ArrayList<Piece>> getPieceList() {
+    public Piece[][] getPieceList(int x, int y) {
         return pieceList;
     }
 
@@ -45,12 +45,12 @@ public class Board {
     };
 
     public Board() {
-        for(int i = 0; i < 7; i++) {
-            for(int j = 0 ; j < 7; i++) {
-                if (i == rowInitBlackPawn)
-                    pieceList.get(i).set(j, new Piece(TYP_PAWN, ChessColor.CLR_BLACK));
-                else if (i == rowInitWhitePawn)
-                    pieceList.get(i).set(j, new Piece(TYP_PAWN, ChessColor.CLR_WHITE));
+        for(int row = 0; row <= 7; row++) {
+            for(int col = 0 ; col <= 7; col++) {
+                if (row == rowInitBlackPawn)
+                    pieceList[row][col] = new Piece(TYP_PAWN, ChessColor.CLR_BLACK);
+                else if (row == rowInitWhitePawn)
+                    pieceList[row][col] = new Piece(TYP_PAWN, ChessColor.CLR_WHITE);
             }
         }
         iterCreateMap(mapWhitePiece, ChessColor.CLR_WHITE);
@@ -59,7 +59,7 @@ public class Board {
 
     private void iterCreateMap (HashMap<int[], ChessType> mapPiece, ChessColor color){
         for (Map.Entry<int[], ChessType> entry : mapPiece.entrySet()) {
-            pieceList.get(entry.getKey()[0]).set(entry.getKey()[1], new Piece(entry.getValue(), color));
+            pieceList[entry.getKey()[0]][entry.getKey()[1]] = new Piece(entry.getValue(), color);
         }
     }
 }
