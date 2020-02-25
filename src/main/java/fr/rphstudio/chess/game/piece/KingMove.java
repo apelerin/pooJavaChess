@@ -10,6 +10,7 @@ public class KingMove implements IMove {
 
     @Override
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p) {
+
         return new ArrayList<IChess.ChessPosition>();
     }
 }
