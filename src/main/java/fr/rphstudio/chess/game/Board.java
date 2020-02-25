@@ -1,8 +1,9 @@
 package fr.rphstudio.chess.game;
 
 import fr.rphstudio.chess.interf.IChess.*;
+import fr.rphstudio.chess.interf.IChess.ChessType;
+import fr.rphstudio.chess.interf.IChess.ChessColor;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

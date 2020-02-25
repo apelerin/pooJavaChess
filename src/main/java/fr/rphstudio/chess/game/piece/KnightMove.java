@@ -11,7 +11,6 @@ public class KnightMove implements IMove {
 
     @Override
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
-
         return new ArrayList<IChess.ChessPosition>();
     }
 }
