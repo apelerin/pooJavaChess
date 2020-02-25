@@ -37,7 +37,7 @@ public class Board {
             put(new int[]{0, 7}, TYP_ROOK);
             put(new int[]{0, 1}, TYP_KNIGHT);
             put(new int[]{0, 6}, TYP_KNIGHT);
-            put(new int[]{2, 0}, TYP_BISHOP);
+            put(new int[]{0, 2}, TYP_BISHOP);
             put(new int[]{0, 5}, TYP_BISHOP);
             put(new int[]{0, 3}, TYP_KING);
             put(new int[]{0, 4}, TYP_QUEEN);
@@ -48,9 +48,9 @@ public class Board {
         for(int row = 0; row <= 7; row++) {
             for(int col = 0 ; col <= 7; col++) {
                 if (row == rowInitBlackPawn)
-                    pieceList[row][col] = new Piece(TYP_PAWN, ChessColor.CLR_BLACK);
+                    pieceList[col][row] = new Piece(TYP_PAWN, ChessColor.CLR_BLACK);
                 else if (row == rowInitWhitePawn)
-                    pieceList[row][col] = new Piece(TYP_PAWN, ChessColor.CLR_WHITE);
+                    pieceList[col][row] = new Piece(TYP_PAWN, ChessColor.CLR_WHITE);
             }
         }
         iterCreateMap(mapWhitePiece, ChessColor.CLR_WHITE);
@@ -59,7 +59,7 @@ public class Board {
 
     private void iterCreateMap (HashMap<int[], ChessType> mapPiece, ChessColor color){
         for (Map.Entry<int[], ChessType> entry : mapPiece.entrySet()) {
-            pieceList[entry.getKey()[0]][entry.getKey()[1]] = new Piece(entry.getValue(), color);
+            pieceList[entry.getKey()[1]][entry.getKey()[0]] = new Piece(entry.getValue(), color);
         }
     }
 }
