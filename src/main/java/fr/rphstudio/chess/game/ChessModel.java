@@ -3,15 +3,17 @@ package fr.rphstudio.chess.game;
 import fr.rphstudio.chess.interf.EmptyCellException;
 import fr.rphstudio.chess.interf.IChess;
 import fr.rphstudio.chess.interf.OutOfBoardException;
+import fr.rphstudio.chess.game.Board;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ChessModel implements IChess {
     private static ChessModel single_instance = null;
+    private Board chessBoard;
 
     private ChessModel() {
-
+        chessBoard = new Board();
     }
 
     public static ChessModel getInstance()
@@ -29,12 +31,16 @@ public class ChessModel implements IChess {
 
     @Override
     public ChessType getPieceType(ChessPosition p) throws EmptyCellException, OutOfBoardException {
-        return ChessType.TYP_PAWN;
+        int positionX = p.x;
+        int positionY = p.y;
+        return chessBoard.getPieceList().get(positionX).get(positionY).getType();
     }
 
     @Override
     public ChessColor getPieceColor(ChessPosition p) throws EmptyCellException, OutOfBoardException {
-        return ChessColor.CLR_WHITE;
+        int positionX = p.x;
+        int positionY = p.y;
+        return chessBoard.getPieceList().get(positionX).get(positionY).getColor();
     }
 
     @Override

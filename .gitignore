@@ -10,3 +10,4 @@ music/*
 sfx/*
 _tmp_/*
 .DS_Store
+.idea/*
