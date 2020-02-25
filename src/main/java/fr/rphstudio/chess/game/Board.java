@@ -62,4 +62,16 @@ public class Board {
             pieceList[entry.getKey()[1]][entry.getKey()[0]] = new Piece(entry.getValue(), color);
         }
     }
+
+    public int getNbRemainingPieces(){
+        int nbrPieces = 0;
+        for (int i = 0; i < pieceList.length; i++){
+            for (int j = 0; j < pieceList[i].length; j++) {
+                if (pieceList[i][j].getClass().getSimpleName() == "Piece"){
+                    nbrPieces++;
+                }
+            }
+        }
+        return nbrPieces;
+    }
 }
