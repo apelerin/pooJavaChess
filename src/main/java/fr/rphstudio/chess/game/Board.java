@@ -64,13 +64,13 @@ public class Board {
         }
     }
 
-    public int getNbRemainingPieces() {
+    public int getNbRemainingPieces(ChessColor color) {
         int nbrPieces = 0;
         for (int i = 0; i < pieceList.length; i++) {
             for (int j = 0; j < pieceList[i].length; j++) {
                 if (pieceList[i][j] == null)
                     continue;
-                if (pieceList[i][j].getClass().getSimpleName().equals("Piece")) {
+                else if (pieceList[i][j].getColor() == color) {
                     nbrPieces++;
                 }
             }
