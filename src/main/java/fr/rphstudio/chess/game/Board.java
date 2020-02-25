@@ -1,5 +1,6 @@
 package fr.rphstudio.chess.game;
 
+import fr.rphstudio.chess.interf.EmptyCellException;
 import fr.rphstudio.chess.interf.IChess.ChessType;
 import fr.rphstudio.chess.interf.IChess.ChessColor;
 
@@ -45,8 +46,8 @@ public class Board {
     };
 
     public Board() {
-        for(int row = 0; row <= 7; row++) {
-            for(int col = 0 ; col <= 7; col++) {
+        for (int row = 0; row <= 7; row++) {
+            for (int col = 0; col <= 7; col++) {
                 if (row == rowInitBlackPawn)
                     pieceList[col][row] = new Piece(TYP_PAWN, ChessColor.CLR_BLACK);
                 else if (row == rowInitWhitePawn)
@@ -57,17 +58,19 @@ public class Board {
         iterCreateMap(mapBlackPiece, ChessColor.CLR_BLACK);
     }
 
-    private void iterCreateMap (HashMap<int[], ChessType> mapPiece, ChessColor color){
+    private void iterCreateMap(HashMap<int[], ChessType> mapPiece, ChessColor color) {
         for (Map.Entry<int[], ChessType> entry : mapPiece.entrySet()) {
             pieceList[entry.getKey()[1]][entry.getKey()[0]] = new Piece(entry.getValue(), color);
         }
     }
 
-    public int getNbRemainingPieces(){
+    public int getNbRemainingPieces() {
         int nbrPieces = 0;
-        for (int i = 0; i < pieceList.length; i++){
+        for (int i = 0; i < pieceList.length; i++) {
             for (int j = 0; j < pieceList[i].length; j++) {
-                if (pieceList[i][j].getClass().getSimpleName() == "Piece"){
+                if (pieceList[i][j] == null)
+                    continue;
+                if (pieceList[i][j].getClass().getSimpleName().equals("Piece")) {
                     nbrPieces++;
                 }
             }
