@@ -34,7 +34,7 @@ public class ChessModel implements IChess {
         int positionX = p.x;
         int positionY = p.y;
         try {
-            return chessBoard.getPieceList()[positionX][positionY].getType();
+            return chessBoard.getPiece(positionX, positionY).getType();
         }
         catch (NullPointerException npe) {
             throw new EmptyCellException();
@@ -46,7 +46,7 @@ public class ChessModel implements IChess {
         int positionX = p.x;
         int positionY = p.y;
         try {
-            return chessBoard.getPieceList()[positionX][positionY].getColor();
+            return chessBoard.getPiece(positionX, positionY).getColor();
         }
         catch (NullPointerException npe) {
             throw new EmptyCellException();
