@@ -14,15 +14,15 @@ public class KnightMove implements IMove {
         int x = p.x;
         int y = p.y;
         ArrayList<IChess.ChessPosition> position = new ArrayList<IChess.ChessPosition>();
-            IChess.ChessPosition pos = new IChess.ChessPosition();
-            pos.y = y-2;
-            pos.x = x+1;
-            if (chessBoard.getPiece(pos.x, pos.y) != null ) {
-                if (chessBoard.getPiece(pos.x, pos.y).getColor() != chessBoard.getPiece(p.x, p.y).getColor())
-                    position.add(pos);
-            }
-            else
-                    position.add(pos);
+        IChess.ChessPosition pos = new IChess.ChessPosition();
+        pos.y = y - 2;
+        pos.x = x + 1;
+        if (chessBoard.getPiece(pos.x, pos.y) != null) {
+            if (chessBoard.getPiece(pos.x, pos.y).getColor() != chessBoard.getPiece(p.x, p.y).getColor())
+                position.add(pos);
+        } else
+            position.add(pos);
+
         return position;
     }
 }
