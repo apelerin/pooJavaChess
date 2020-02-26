@@ -10,7 +10,6 @@ import java.util.List;
 public class BishopMove implements IMove {
 
     @Override
-<<<<<<< HEAD
     // Il prend en paramètre la position de la pièce sur laquelle on a cliqué, et le board
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
         //On créer des variables qui contiennent la position de la pièce cliquée
@@ -85,9 +84,6 @@ public class BishopMove implements IMove {
                 position.add(pos);
         }
         return position;
-=======
-    public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
-        return new ArrayList<IChess.ChessPosition>();
->>>>>>> origin/master
+
     }
 }

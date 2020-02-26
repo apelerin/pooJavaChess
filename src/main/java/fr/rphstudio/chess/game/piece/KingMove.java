@@ -9,9 +9,9 @@ import java.util.List;
 
 public class KingMove implements IMove {
 
-    @Override
-    public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
-<<<<<<< HEAD
+        @Override
+        public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
+
         int x = p.x;
         int y = p.y;
         ArrayList<IChess.ChessPosition> position = new ArrayList<IChess.ChessPosition>();
@@ -101,8 +101,5 @@ public class KingMove implements IMove {
             }*/
         }
         return position;
-=======
-        return new ArrayList<IChess.ChessPosition>();
->>>>>>> origin/master
     }
 }
