@@ -1,5 +1,6 @@
 package fr.rphstudio.chess.game.piece;
 
+import fr.rphstudio.chess.game.Board;
 import fr.rphstudio.chess.interf.IChess;
 import fr.rphstudio.chess.interf.IMove;
 
@@ -9,7 +10,7 @@ import java.util.List;
 public class BishopMove implements IMove {
 
     @Override
-    public List<IChess.ChessPosition> getMove(IChess.ChessPosition p) {
+    public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
 
         return new ArrayList<IChess.ChessPosition>();
     }
