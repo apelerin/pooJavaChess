@@ -4,7 +4,7 @@
     <list default="true" id="8aba6140-249c-4803-8bdd-1d311e414562" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/piece/PawnMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/piece/PawnMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/piece/KingMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/piece/KingMove.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79-mac-osx.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79-mac-osx.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79-mac-osx/Chess-1.6.79/Chess-1.6.79.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79-mac-osx/Chess-1.6.79/Chess-1.6.79.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79-release-linux.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79-release-linux.zip" afterDir="false" />
@@ -13,7 +13,7 @@
       <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79-release-windows/Chess-1.6.79/Chess-1.6.79.exe" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79-release-windows/Chess-1.6.79/Chess-1.6.79.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79.exe" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/rphstudio/chess/game/ChessModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/rphstudio/chess/game/ChessModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,25 +141,25 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="350" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1582635382381" />
-    <state width="1398" height="170" key="GridCell.Tab.0.bottom" timestamp="1582728799325">
+    <state width="1398" height="170" key="GridCell.Tab.0.bottom" timestamp="1582735035736">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1582728799325" />
+    <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1582735035736" />
     <state width="1362" height="170" key="GridCell.Tab.0.bottom/0.23.1404.877@0.23.1404.877" timestamp="1582706936357" />
-    <state width="1398" height="170" key="GridCell.Tab.0.center" timestamp="1582728799324">
+    <state width="1398" height="170" key="GridCell.Tab.0.center" timestamp="1582735035735">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1582728799324" />
+    <state width="1398" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1582735035735" />
     <state width="1362" height="170" key="GridCell.Tab.0.center/0.23.1404.877@0.23.1404.877" timestamp="1582706936357" />
-    <state width="1398" height="170" key="GridCell.Tab.0.left" timestamp="1582728799324">
+    <state width="1398" height="170" key="GridCell.Tab.0.left" timestamp="1582735035735">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1582728799324" />
+    <state width="1398" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1582735035735" />
     <state width="1362" height="170" key="GridCell.Tab.0.left/0.23.1404.877@0.23.1404.877" timestamp="1582706936356" />
-    <state width="1398" height="170" key="GridCell.Tab.0.right" timestamp="1582728799325">
+    <state width="1398" height="170" key="GridCell.Tab.0.right" timestamp="1582735035736">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1582728799325" />
+    <state width="1398" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1582735035736" />
     <state width="1362" height="170" key="GridCell.Tab.0.right/0.23.1404.877@0.23.1404.877" timestamp="1582706936357" />
     <state x="191" y="60" key="SettingsEditor" timestamp="1582541737229">
       <screen x="0" y="0" width="1440" height="900" />
