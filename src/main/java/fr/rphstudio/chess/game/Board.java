@@ -33,7 +33,7 @@ public class Board {
             put(new int[]{7, 2}, TYP_BISHOP);
             put(new int[]{7, 5}, TYP_BISHOP);
             put(new int[]{7, 4}, TYP_KING);
-            put(new int[]{7, 3}, TYP_QUEEN);
+            put(new int[]{4, 3}, TYP_QUEEN);
         }
     };
 
