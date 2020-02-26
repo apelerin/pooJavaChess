@@ -8,8 +8,8 @@ import java.util.List;
 
 public class RookMove implements IMove {
 
-    @Override
     // Il prend en paramètre la position de la pièce sur laquelle on a cliqué, et le board
+    @Override
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
         //On créer des variables qui contiennent la position de la pièce cliquée
         int x = p.x; //horizontale
