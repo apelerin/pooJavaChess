@@ -71,6 +71,7 @@ public class ChessModel implements IChess {
         return chessBoard.getPiece(p.x, p.y).getPieceMove().getMove(p, chessBoard);
     }
 
+
     @Override
     public void movePiece(ChessPosition p0, ChessPosition p1) {
         Piece movingPiece = chessBoard.getPiece(p0.x, p0.y);

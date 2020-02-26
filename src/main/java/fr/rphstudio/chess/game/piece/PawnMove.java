@@ -13,7 +13,7 @@ public class PawnMove implements IMove {
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
         int x = p.x;
         int y = p.y;
-        IChess.ChessPosition pos = new IChess.ChessPosition( p.x+1 , p.y+1 );
+        IChess.ChessPosition pos = new IChess.ChessPosition( p.x+0 , p.y+1 );
 //        pos.x = p.x + 1;
 //        pos.y = p.y + 1;
         ArrayList<IChess.ChessPosition> position = new ArrayList<IChess.ChessPosition>();
