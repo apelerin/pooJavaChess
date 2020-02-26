@@ -27,7 +27,10 @@ public class ChessModel implements IChess {
 
     @Override
     public void reinit() {
-
+        chessBoard = new Board();
+        whiteRemovedPieces = new ArrayList<ChessType>();
+        blackRemovedPieces = new ArrayList<ChessType>();
+        // TODO reinit the time
     }
 
     @Override
@@ -51,6 +54,9 @@ public class ChessModel implements IChess {
         }
         catch (NullPointerException npe) {
             throw new EmptyCellException();
+        }
+        catch (ArrayIndexOutOfBoundsException aio) {
+            throw new OutOfBoardException();
         }
     }
 
