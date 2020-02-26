@@ -2,7 +2,9 @@ package fr.rphstudio.chess.game;
 
 import fr.rphstudio.chess.interf.IChess.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static fr.rphstudio.chess.interf.IChess.ChessType.*;
@@ -22,6 +24,43 @@ public class Board {
 
     public void replacingPiece(Piece movingPiece, ChessPosition pos) {
         pieceList[pos.x][pos.y] = movingPiece;
+    }
+
+    // Check if the king is threaten, since it is using getMove, there is no need to check the color, it is handle in
+    // each movement of the pieces
+    public ChessKingState checkState (ChessColor color) {
+        ChessPosition kingPos = getKingPos(color);
+        for (int i = 0; i < pieceList.length; i++) {
+            for (int j = 0; j < pieceList[i].length; j++) {
+                if (pieceList[i][j] == null)
+                    continue;
+                ChessPosition piecePos = new ChessPosition(i, j);
+                if (comparePosInList(pieceList[i][j].getPieceMove().getMove(piecePos, this), kingPos)) {
+                    return ChessKingState.KING_THREATEN;
+                }
+            }
+        }
+        return ChessKingState.KING_SAFE;
+    }
+
+    private Boolean comparePosInList(List<ChessPosition> list, ChessPosition pos2) {
+        for (int i = 0; i < list.size(); i++)
+        if (list.get(i).x == pos2.x && list.get(i).y == pos2.y)
+            return true;
+        return false;
+    }
+
+    private ChessPosition getKingPos(ChessColor color) {
+        for (int i = 0; i < pieceList.length; i++) {
+            for (int j = 0; j < pieceList[i].length; j++) {
+                if (pieceList[i][j] == null)
+                    continue;
+                if (pieceList[i][j].getType() == TYP_KING && pieceList[i][j].getColor() == color) {
+                    return new ChessPosition(i, j);
+                }
+            }
+        }
+        return null;
     }
 
     HashMap<int[], ChessType> mapWhitePiece = new HashMap<int[], ChessType>() {
