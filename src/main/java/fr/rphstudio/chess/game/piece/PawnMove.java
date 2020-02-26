@@ -9,7 +9,8 @@ import java.util.List;
 
 public class PawnMove implements IMove {
 
-    @Override
+
+   @Override
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
         int x = p.x;
         int y = p.y;
