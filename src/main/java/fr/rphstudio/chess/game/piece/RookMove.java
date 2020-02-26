@@ -1,6 +1,12 @@
 package fr.rphstudio.chess.game.piece;
+<<<<<<< HEAD
 import fr.rphstudio.chess.game.Board;
 import fr.rphstudio.chess.game.ChessModel;
+=======
+
+
+import fr.rphstudio.chess.game.Board;
+>>>>>>> origin/master
 import fr.rphstudio.chess.interf.IChess;
 import fr.rphstudio.chess.interf.IMove;
 import java.lang.reflect.Array;
@@ -10,6 +16,7 @@ import java.util.List;
 public class RookMove implements IMove {
 
     @Override
+<<<<<<< HEAD
     // Il prend en paramètre la position de la pièce sur laquelle on a cliqué, et le board
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
         //On créer des variables qui contiennent la position de la pièce cliquée
@@ -74,5 +81,9 @@ public class RookMove implements IMove {
                 position.add(pos);
         }
         return position;
+=======
+    public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
+        return new ArrayList<IChess.ChessPosition>();
+>>>>>>> origin/master
     }
 }

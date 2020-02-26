@@ -1,12 +1,7 @@
 package fr.rphstudio.chess.game;
 
-import fr.rphstudio.chess.game.piece.PawnMove;
-import fr.rphstudio.chess.interf.EmptyCellException;
-import fr.rphstudio.chess.interf.IChess.ChessType;
-import fr.rphstudio.chess.interf.IChess.ChessColor;
-import fr.rphstudio.chess.interf.IMove;
+import fr.rphstudio.chess.interf.IChess.*;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +14,14 @@ public class Board {
 
     public Piece getPiece(int x, int y) {
         return pieceList[x][y];
+    }
+
+    public void removeMovingPiece(ChessPosition pos) {
+        pieceList[pos.x][pos.y] = null;
+    }
+
+    public void replacingPiece(Piece movingPiece, ChessPosition pos) {
+        pieceList[pos.x][pos.y] = movingPiece;
     }
 
     HashMap<int[], ChessType> mapWhitePiece = new HashMap<int[], ChessType>() {

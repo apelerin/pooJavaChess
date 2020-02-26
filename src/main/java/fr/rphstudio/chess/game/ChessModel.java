@@ -3,7 +3,6 @@ package fr.rphstudio.chess.game;
 import fr.rphstudio.chess.interf.EmptyCellException;
 import fr.rphstudio.chess.interf.IChess;
 import fr.rphstudio.chess.interf.OutOfBoardException;
-import fr.rphstudio.chess.game.Board;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +10,8 @@ import java.util.List;
 public class ChessModel implements IChess {
     private static ChessModel single_instance = null;
     private Board chessBoard;
+    private ArrayList<ChessType> whiteRemovedPieces = new ArrayList<ChessType>();
+    private ArrayList<ChessType> blackRemovedPieces = new ArrayList<ChessType>();
 
     private ChessModel() {
         chessBoard = new Board();
@@ -67,7 +68,18 @@ public class ChessModel implements IChess {
 
     @Override
     public void movePiece(ChessPosition p0, ChessPosition p1) {
-
+        Piece movingPiece = chessBoard.getPiece(p0.x, p0.y);
+        if (chessBoard.getPiece(p1.x, p1.y) != null) {
+            Piece pieceEaten = chessBoard.getPiece(p1.x, p1.y);
+            if (pieceEaten.getColor() == ChessColor.CLR_WHITE) {
+                whiteRemovedPieces.add(pieceEaten.getType());
+            }
+            else {
+                blackRemovedPieces.add(pieceEaten.getType());
+            }
+        }
+        chessBoard.removeMovingPiece(p0);
+        chessBoard.replacingPiece(movingPiece, p1);
     }
 
     @Override
@@ -77,7 +89,10 @@ public class ChessModel implements IChess {
 
     @Override
     public List<ChessType> getRemovedPieces(ChessColor color) {
-        return new ArrayList<ChessType>();
+        if (color == ChessColor.CLR_WHITE) {
+            return whiteRemovedPieces;
+        }
+        return blackRemovedPieces;
     }
 
     @Override

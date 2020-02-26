@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/theovadymoutty/Desktop/codingfactory/java/projet poo/src/main/java/fr/rphstudio/chess/game/piece/RookMove.java
 /Users/theovadymoutty/Desktop/codingfactory/java/projet poo/src/main/java/fr/rphstudio/chess/interf/ChessException.java
 /Users/theovadymoutty/Desktop/codingfactory/java/projet poo/src/main/java/fr/rphstudio/chess/game/piece/QueenMove.java
@@ -15,3 +16,22 @@
 /Users/theovadymoutty/Desktop/codingfactory/java/projet poo/src/main/java/fr/rphstudio/chess/game/piece/KnightMove.java
 /Users/theovadymoutty/Desktop/codingfactory/java/projet poo/src/main/java/fr/rphstudio/chess/interf/IMove.java
 /Users/theovadymoutty/Desktop/codingfactory/java/projet poo/src/main/java/fr/rphstudio/chess/game/ChessModel.java
+=======
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/game/piece/KingMove.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/game/piece/BishopMove.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/game/piece/QueenMove.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/game/piece/PawnMove.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/interf/OutOfBoardException.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/game/piece/RookMove.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/interf/IMove.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/interf/EmptyCellException.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/interf/ChessException.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/interf/IChess.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/launcher/MainLauncher.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/launcher/ChessFontManager.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/launcher/ChessGameController.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/game/ChessModel.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/game/piece/KnightMove.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/game/Piece.java
+/Users/Etienne/Desktop/pooJavaChess/src/main/java/fr/rphstudio/chess/game/Board.java
+>>>>>>> origin/master

@@ -2,11 +2,19 @@
 <project name="maven-antrun-" default="main"  >
 <target name="main">
   <echo>Using env.test.properties</echo>
+<<<<<<< HEAD
   <copy todir="/Users/theovadymoutty/Desktop/codingfactory/java/projet poo/target/../lib">
     <fileset includes="**" dir="/Users/theovadymoutty/Desktop/codingfactory/java/projet poo/target/natives"/>
   </copy>
   <copy todir="/Users/theovadymoutty/Desktop/codingfactory/java/projet poo/target/..">
     <fileset includes="**" dir="/Users/theovadymoutty/Desktop/codingfactory/java/projet poo/target/../src/main/resources"/>
+=======
+  <copy todir="/Users/Etienne/Desktop/pooJavaChess/target/../lib">
+    <fileset includes="**" dir="/Users/Etienne/Desktop/pooJavaChess/target/natives"/>
+  </copy>
+  <copy todir="/Users/Etienne/Desktop/pooJavaChess/target/..">
+    <fileset includes="**" dir="/Users/Etienne/Desktop/pooJavaChess/target/../src/main/resources"/>
+>>>>>>> origin/master
   </copy>
 </target>
 </project>

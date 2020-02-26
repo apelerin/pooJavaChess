@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="8aba6140-249c-4803-8bdd-1d311e414562" name="Default" comment="s">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/piece/KingMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/piece/KingMove.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/piece/KnightMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/piece/KnightMove.java" afterDir="false" />
+=======
+    <list default="true" id="8aba6140-249c-4803-8bdd-1d311e414562" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/ChessModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/ChessModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/piece/QueenMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/rphstudio/chess/game/piece/QueenMove.java" afterDir="false" />
+>>>>>>> origin/master
       <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79-mac-osx.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79-mac-osx.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79-mac-osx/Chess-1.6.79/Chess-1.6.79.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79-mac-osx/Chess-1.6.79/Chess-1.6.79.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79-release-linux.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79-release-linux.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79-release-linux/Chess-1.6.79/Chess-1.6.79.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79-release-linux/Chess-1.6.79/Chess-1.6.79.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79-release-windows.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79-release-windows.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79-release-windows/Chess-1.6.79/Chess-1.6.79.exe" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79-release-windows/Chess-1.6.79/Chess-1.6.79.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79.exe" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Chess-1.6.79.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Chess-1.6.79.jar" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+=======
+>>>>>>> origin/master
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +100,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -105,6 +124,7 @@
       <updated>1582473974881</updated>
       <workItem from="1582541612940" duration="52000" />
       <workItem from="1582541688122" duration="8453000" />
+      <workItem from="1582706886381" duration="914000" />
     </task>
     <servers />
   </component>
@@ -128,6 +148,7 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="350" y="52" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1582635382381" />
+<<<<<<< HEAD
     <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1582720801820">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -148,19 +169,45 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="258" y="112" key="Maven.ArtifactSearchDialog/0.0.1440.900@0.0.1440.900" timestamp="1582706590166" />
+=======
+    <state width="1398" height="170" key="GridCell.Tab.0.bottom" timestamp="1582707393988">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="170" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1582707393988" />
+    <state width="1362" height="170" key="GridCell.Tab.0.bottom/0.23.1404.877@0.23.1404.877" timestamp="1582706936357" />
+    <state width="1398" height="170" key="GridCell.Tab.0.center" timestamp="1582707393987">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="170" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1582707393987" />
+    <state width="1362" height="170" key="GridCell.Tab.0.center/0.23.1404.877@0.23.1404.877" timestamp="1582706936357" />
+    <state width="1398" height="170" key="GridCell.Tab.0.left" timestamp="1582707393987">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="170" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1582707393987" />
+    <state width="1362" height="170" key="GridCell.Tab.0.left/0.23.1404.877@0.23.1404.877" timestamp="1582706936356" />
+    <state width="1398" height="170" key="GridCell.Tab.0.right" timestamp="1582707393988">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="170" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1582707393988" />
+    <state width="1362" height="170" key="GridCell.Tab.0.right/0.23.1404.877@0.23.1404.877" timestamp="1582706936357" />
+>>>>>>> origin/master
     <state x="191" y="60" key="SettingsEditor" timestamp="1582541737229">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="191" y="60" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1582541737229" />
     <state x="186" y="81" key="SettingsEditor/0.23.1404.877@0.23.1404.877" timestamp="1582541707431" />
-    <state x="356" y="275" key="com.intellij.ide.util.TipDialog" timestamp="1582541688607">
+    <state x="356" y="275" key="com.intellij.ide.util.TipDialog" timestamp="1582706886131">
       <screen x="0" y="23" width="1404" height="877" />
     </state>
+<<<<<<< HEAD
     <state x="356" y="275" key="com.intellij.ide.util.TipDialog/0.23.1404.877@0.23.1404.877" timestamp="1582541688607" />
     <state x="469" y="184" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1582707606765">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="469" y="184" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1440.900@0.0.1440.900" timestamp="1582707606765" />
+=======
+    <state x="356" y="275" key="com.intellij.ide.util.TipDialog/0.23.1404.877@0.23.1404.877" timestamp="1582706886131" />
+>>>>>>> origin/master
     <state x="385" y="112" width="670" height="676" key="search.everywhere.popup" timestamp="1582634908645">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

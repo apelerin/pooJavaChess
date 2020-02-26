@@ -11,6 +11,7 @@ public class KnightMove implements IMove {
 
     @Override
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
+<<<<<<< HEAD
         int x = p.x;
         int y = p.y;
         ArrayList<IChess.ChessPosition> position = new ArrayList<IChess.ChessPosition>();
@@ -22,6 +23,8 @@ public class KnightMove implements IMove {
                 position.add(pos);
         } else
             position.add(pos);
+=======
+>>>>>>> origin/master
 
         return position;
     }
