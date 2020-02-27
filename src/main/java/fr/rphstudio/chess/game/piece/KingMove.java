@@ -1,12 +1,9 @@
 package fr.rphstudio.chess.game.piece;
-
 import fr.rphstudio.chess.game.Board;
 import fr.rphstudio.chess.interf.IChess;
 import fr.rphstudio.chess.interf.IMove;
-
 import java.util.ArrayList;
 import java.util.List;
-
 public class KingMove implements IMove {
     @Override
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
@@ -30,9 +27,8 @@ public class KingMove implements IMove {
         IChess.ChessPosition pos7 = new IChess.ChessPosition(x-1, y+1);
         ArrayList<IChess.ChessPosition> position = new ArrayList<IChess.ChessPosition>();
 
-
         if (pos.y < 8){
-            if (chessBoard.getPiece(pos.x, pos.y)/*.getType()*/ != null){
+            if (chessBoard.getPiece(pos.x, pos.y) != null){
                 if (chessBoard.getPiece(pos.x, pos.y).getColor() != chessBoard.getPiece(x, y).getColor()){
                     position.add(pos);
                 }
@@ -42,7 +38,7 @@ public class KingMove implements IMove {
         }
 
         if (pos1.y < 8 && pos1.x < 8){
-            if (chessBoard.getPiece(pos1.x, pos1.y).getType() != null){
+            if (chessBoard.getPiece(pos1.x, pos1.y) != null){
                 if (chessBoard.getPiece(pos1.x, pos1.y).getColor() != chessBoard.getPiece(x, y).getColor()){
                     position.add(pos1);
                 }
@@ -52,7 +48,7 @@ public class KingMove implements IMove {
         }
 
         if (pos2.y < 8){
-            if (chessBoard.getPiece(pos2.x, pos2.y).getType() != null){
+            if (chessBoard.getPiece(pos2.x, pos2.y) != null){
                 if (chessBoard.getPiece(pos2.x, pos2.y).getColor() != chessBoard.getPiece(x, y).getColor()){
                     position.add(pos2);
                 }
@@ -62,7 +58,7 @@ public class KingMove implements IMove {
         }
 
         if (pos3.x < 8 && pos3.y >= 0){
-            if (chessBoard.getPiece(pos3.x, pos3.y).getType() != null){
+            if (chessBoard.getPiece(pos3.x, pos3.y) != null){
                 if (chessBoard.getPiece(pos3.x, pos3.y).getColor() != chessBoard.getPiece(x, y).getColor()){
                     position.add(pos3);
                 }
@@ -70,9 +66,8 @@ public class KingMove implements IMove {
             else
                 position.add(pos3);
         }
-
-        if (pos4.y < 8){
-            if (chessBoard.getPiece(pos4.x, pos4.y).getType() != null){
+        if (pos4.y >= 0 ){
+            if (chessBoard.getPiece(pos4.x, pos4.y) != null){
                 if (chessBoard.getPiece(pos4.x, pos4.y).getColor() != chessBoard.getPiece(x, y).getColor()){
                     position.add(pos4);
                 }
@@ -80,9 +75,8 @@ public class KingMove implements IMove {
             else
                 position.add(pos4);
         }
-
         if (pos5.x >= 0 && pos5.y >= 0){
-            if (chessBoard.getPiece(pos5.x, pos5.y).getType() != null){
+            if (chessBoard.getPiece(pos5.x, pos5.y) != null){
                 if (chessBoard.getPiece(pos5.x, pos5.y).getColor() != chessBoard.getPiece(x, y).getColor()){
                     position.add(pos5);
                 }
@@ -90,9 +84,8 @@ public class KingMove implements IMove {
             else
                 position.add(pos5);
         }
-
         if (pos6.x >= 0){
-            if (chessBoard.getPiece(pos6.x, pos6.y).getType() != null){
+            if (chessBoard.getPiece(pos6.x, pos6.y) != null){
                 if (chessBoard.getPiece(pos6.x, pos6.y).getColor() != chessBoard.getPiece(x, y).getColor()){
                     position.add(pos6);
                 }
@@ -100,9 +93,8 @@ public class KingMove implements IMove {
             else
                 position.add(pos6);
         }
-
         if (pos7.x >= 0 && pos7.y < 8){
-            if (chessBoard.getPiece(pos7.x, pos7.y).getType() != null){
+            if (chessBoard.getPiece(pos7.x, pos7.y) != null){
                 if (chessBoard.getPiece(pos7.x, pos7.y).getColor() != chessBoard.getPiece(x, y).getColor()){
                     position.add(pos7);
                 }
@@ -110,10 +102,6 @@ public class KingMove implements IMove {
             else
                 position.add(pos7);
         }
-
-
         return position;
     }
-
 }
-
