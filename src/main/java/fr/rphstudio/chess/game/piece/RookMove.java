@@ -3,12 +3,12 @@ package fr.rphstudio.chess.game.piece;
 import fr.rphstudio.chess.game.Board;
 import fr.rphstudio.chess.interf.IChess;
 import fr.rphstudio.chess.interf.IMove;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class RookMove implements IMove {
 
+    // Il prend en paramètre la position de la pièce sur laquelle on a cliqué, et le board
     @Override
 
     // Il prend en paramètre la position de la pièce sur laquelle on a cliqué, et le board
@@ -75,6 +75,5 @@ public class RookMove implements IMove {
                 position.add(pos);
         }
         return position;
-
     }
 }

@@ -27,7 +27,10 @@ public class ChessModel implements IChess {
 
     @Override
     public void reinit() {
-
+        chessBoard = new Board();
+        whiteRemovedPieces = new ArrayList<ChessType>();
+        blackRemovedPieces = new ArrayList<ChessType>();
+        // TODO reinit the time
     }
 
     @Override
@@ -52,6 +55,9 @@ public class ChessModel implements IChess {
         catch (NullPointerException npe) {
             throw new EmptyCellException();
         }
+        catch (ArrayIndexOutOfBoundsException aio) {
+            throw new OutOfBoardException();
+        }
     }
 
     @Override
@@ -64,6 +70,7 @@ public class ChessModel implements IChess {
     public List<ChessPosition> getPieceMoves(ChessPosition p) {
         return chessBoard.getPiece(p.x, p.y).getPieceMove().getMove(p, chessBoard);
     }
+
 
     @Override
     public void movePiece(ChessPosition p0, ChessPosition p1) {
@@ -106,7 +113,7 @@ public class ChessModel implements IChess {
 
     @Override
     public ChessKingState getKingState(ChessColor color) {
-        return ChessKingState.KING_SAFE;
+        return chessBoard.checkState(color);
     }
 
     @Override

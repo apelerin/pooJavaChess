@@ -1,3 +1,4 @@
+
 package fr.rphstudio.chess.game.piece;
 
 import fr.rphstudio.chess.game.Board;
