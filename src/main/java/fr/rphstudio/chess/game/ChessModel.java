@@ -12,6 +12,8 @@ public class ChessModel implements IChess {
     private Board chessBoard;
     private ArrayList<ChessType> whiteRemovedPieces = new ArrayList<ChessType>();
     private ArrayList<ChessType> blackRemovedPieces = new ArrayList<ChessType>();
+    private TimerSet timerW = new TimerSet();
+    private TimerSet timerB = new TimerSet();
 
     /**
      * creation of a new board (table)
@@ -44,6 +46,8 @@ public class ChessModel implements IChess {
         chessBoard = new Board();
         whiteRemovedPieces = new ArrayList<ChessType>();
         blackRemovedPieces = new ArrayList<ChessType>();
+        timerW = new TimerSet();
+        timerB = new TimerSet();
         // TODO reinit the time
     }
 
@@ -182,7 +186,12 @@ public class ChessModel implements IChess {
 
     @Override
     public long getPlayerDuration(ChessColor color, boolean isPlaying) {
+        if (color == ChessColor.CLR_WHITE && isPlaying){
+            return timerW.setTimer();
+        }
+        if (color == ChessColor.CLR_BLACK && isPlaying){
+            return timerB.setTimer();
+        }
         return 0;
     }
-
 }
