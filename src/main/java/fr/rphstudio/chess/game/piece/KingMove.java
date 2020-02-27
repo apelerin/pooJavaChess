@@ -8,7 +8,6 @@ import java.util.List;
 import static fr.rphstudio.chess.interf.IChess.ChessType.TYP_ROOK;
 
 public class KingMove implements IMove {
-
     @Override
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
         int x = p.x;

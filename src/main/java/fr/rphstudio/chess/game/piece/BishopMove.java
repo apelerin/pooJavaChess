@@ -84,6 +84,5 @@ public class BishopMove implements IMove {
                 position.add(pos);
         }
         return position;
-
     }
 }
