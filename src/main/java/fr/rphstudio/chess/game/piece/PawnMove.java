@@ -99,20 +99,6 @@ public class PawnMove implements IMove {
             }
         }
 
-
-        if(chessBoard.getPiece(x,y).getColor() == IChess.ChessColor.CLR_WHITE){
-            if (p.y == 0){
-               chessBoard.getPiece(x,y).setChessType(TYP_QUEEN);
-               chessBoard.getPiece(x, y).setChessMove(new QueenMove());
-            }
-        }
-       if(chessBoard.getPiece(x,y).getColor() == IChess.ChessColor.CLR_BLACK){
-           if (p.y == 7){
-             chessBoard.getPiece(x,y).setChessType(TYP_QUEEN);
-               chessBoard.getPiece(x, y).setChessMove(new QueenMove());
-       }
-    }
-
         return position;
     }
 }

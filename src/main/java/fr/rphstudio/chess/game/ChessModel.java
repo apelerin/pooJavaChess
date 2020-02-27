@@ -68,18 +68,26 @@ public class ChessModel implements IChess {
 
     @Override
     public void movePiece(ChessPosition p0, ChessPosition p1) {
-        Piece movingPiece = chessBoard.getPiece(p0.x, p0.y);
-        if (chessBoard.getPiece(p1.x, p1.y) != null) {
-            Piece pieceEaten = chessBoard.getPiece(p1.x, p1.y);
-            if (pieceEaten.getColor() == ChessColor.CLR_WHITE) {
-                whiteRemovedPieces.add(pieceEaten.getType());
+        if (chessBoard.getPiece(p0.x, p0.y).getType() == ChessType.TYP_PAWN) {
+                if (p1.y == 0 || p1.y == 7) {
+                    Piece newQueen = new Piece(ChessType.TYP_QUEEN, chessBoard.getPiece(p0.x,p0.y).getColor());
+                    chessBoard.removeMovingPiece(p0);
+                    chessBoard.removeMovingPiece(p1);
+                    chessBoard.replacingPiece(newQueen, p1);
+                    return;
+                }
             }
-            else {
-                blackRemovedPieces.add(pieceEaten.getType());
+            Piece movingPiece = chessBoard.getPiece(p0.x, p0.y);
+            if (chessBoard.getPiece(p1.x, p1.y) != null) {
+                Piece pieceEaten = chessBoard.getPiece(p1.x, p1.y);
+                if (pieceEaten.getColor() == ChessColor.CLR_WHITE) {
+                    whiteRemovedPieces.add(pieceEaten.getType());
+                } else {
+                    blackRemovedPieces.add(pieceEaten.getType());
+                }
             }
-        }
-        chessBoard.removeMovingPiece(p0);
-        chessBoard.replacingPiece(movingPiece, p1);
+            chessBoard.removeMovingPiece(p0);
+            chessBoard.replacingPiece(movingPiece, p1);
     }
 
     @Override
