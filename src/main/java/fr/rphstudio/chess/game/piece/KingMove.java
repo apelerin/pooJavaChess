@@ -4,7 +4,11 @@ import fr.rphstudio.chess.interf.IChess;
 import fr.rphstudio.chess.interf.IMove;
 import java.util.ArrayList;
 import java.util.List;
+
+import static fr.rphstudio.chess.interf.IChess.ChessType.TYP_ROOK;
+
 public class KingMove implements IMove {
+
     @Override
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
         int x = p.x;
@@ -102,6 +106,26 @@ public class KingMove implements IMove {
             else
                 position.add(pos7);
         }
+        checkShortCastle(p, chessBoard, position);
+        checkLongCastle(p, chessBoard, position);
+
         return position;
+    }
+
+    public void checkShortCastle(IChess.ChessPosition p, Board chessBoard, ArrayList<IChess.ChessPosition> position){
+        IChess.ChessPosition castleShort = new IChess.ChessPosition(p.x+3, p.y);
+        if (chessBoard.getPiece(p.x, p.y).nbrMoves == 0 && chessBoard.getPiece(p.x+3, p.y).getType() == TYP_ROOK && chessBoard.getPiece(p.x+3, p.y).nbrMoves == 0){
+            if (chessBoard.getPiece(p.x+1, p.y) == null && chessBoard.getPiece(p.x+2, p.y) == null){
+                position.add(castleShort);
+            }
+        }
+    }
+    public void checkLongCastle(IChess.ChessPosition p, Board chessBoard, ArrayList<IChess.ChessPosition> position){
+        IChess.ChessPosition castleShort = new IChess.ChessPosition(p.x-4, p.y);
+        if (chessBoard.getPiece(p.x, p.y).nbrMoves == 0 && chessBoard.getPiece(p.x-4, p.y).getType() == TYP_ROOK && chessBoard.getPiece(p.x-4, p.y).nbrMoves == 0){
+            if (chessBoard.getPiece(p.x-1, p.y) == null && chessBoard.getPiece(p.x-2, p.y) == null && chessBoard.getPiece(p.x-3, p.y) == null){
+                position.add(castleShort);
+            }
+        }
     }
 }

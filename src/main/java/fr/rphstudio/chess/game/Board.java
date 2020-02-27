@@ -28,11 +28,11 @@ public class Board {
         {
             put(new int[]{7, 0}, TYP_ROOK);
             put(new int[]{7, 7}, TYP_ROOK);
-            put(new int[]{7, 1}, TYP_KNIGHT);
-            put(new int[]{7, 6}, TYP_KNIGHT);
-            put(new int[]{7, 2}, TYP_BISHOP);
-            put(new int[]{7, 5}, TYP_BISHOP);
-            put(new int[]{4, 4}, TYP_KING);
+            //put(new int[]{7, 1}, TYP_KNIGHT);
+            //put(new int[]{7, 6}, TYP_KNIGHT);
+            //put(new int[]{7, 2}, TYP_BISHOP);
+            //put(new int[]{7, 5}, TYP_BISHOP);
+            put(new int[]{7, 4}, TYP_KING);
             put(new int[]{7, 3}, TYP_QUEEN);
         }
     };
@@ -45,8 +45,8 @@ public class Board {
             put(new int[]{0, 6}, TYP_KNIGHT);
             put(new int[]{0, 2}, TYP_BISHOP);
             put(new int[]{0, 5}, TYP_BISHOP);
-            put(new int[]{0, 3}, TYP_KING);
-            put(new int[]{0, 4}, TYP_QUEEN);
+            put(new int[]{0, 4}, TYP_KING);
+            put(new int[]{0, 3}, TYP_QUEEN);
         }
     };
 

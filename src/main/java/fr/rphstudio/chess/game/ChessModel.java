@@ -68,6 +68,29 @@ public class ChessModel implements IChess {
     @Override
     public void movePiece(ChessPosition p0, ChessPosition p1) {
         Piece movingPiece = chessBoard.getPiece(p0.x, p0.y);
+        movingPiece.nbrMoves++;
+        if (chessBoard.getPiece(p0.x, p0.y).getType() == ChessType.TYP_KING){
+            if (p1.x + p0.x == 11 ){
+                Piece rookCastle = new Piece(ChessType.TYP_ROOK, chessBoard.getPiece(p0.x, p0.y).getColor());
+                chessBoard.removeMovingPiece(p0);
+                chessBoard.removeMovingPiece(p1);
+                ChessPosition kingPlacement = new ChessPosition(p0.x+2, p0.y);
+                ChessPosition rookPlacement = new ChessPosition(p1.x-2, p1.y);
+                chessBoard.replacingPiece(movingPiece, kingPlacement);
+                chessBoard.replacingPiece(rookCastle, rookPlacement);
+                return;
+            }
+            if (p1.x + p0.x == 4 ){
+                Piece rookCastle = new Piece(ChessType.TYP_ROOK, chessBoard.getPiece(p0.x, p0.y).getColor());
+                chessBoard.removeMovingPiece(p0);
+                chessBoard.removeMovingPiece(p1);
+                ChessPosition kingPlacement = new ChessPosition(p0.x-2, p0.y);
+                ChessPosition rookPlacement = new ChessPosition(p1.x+3, p1.y);
+                chessBoard.replacingPiece(movingPiece, kingPlacement);
+                chessBoard.replacingPiece(rookCastle, rookPlacement);
+                return;
+            }
+        }
         if (chessBoard.getPiece(p1.x, p1.y) != null) {
             Piece pieceEaten = chessBoard.getPiece(p1.x, p1.y);
             if (pieceEaten.getColor() == ChessColor.CLR_WHITE) {
