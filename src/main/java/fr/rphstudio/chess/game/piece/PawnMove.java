@@ -7,6 +7,8 @@ import fr.rphstudio.chess.interf.IMove;
 import java.util.ArrayList;
 import java.util.List;
 
+import static fr.rphstudio.chess.interf.IChess.ChessType.TYP_QUEEN;
+
 public class PawnMove implements IMove {
 
     @Override
@@ -16,6 +18,8 @@ public class PawnMove implements IMove {
         ArrayList<IChess.ChessPosition> position = new ArrayList<IChess.ChessPosition>();
 
         IChess.ChessPosition pos = new IChess.ChessPosition(x,y);
+
+
 
         if (chessBoard.getPiece(x, y).getColor() == IChess.ChessColor.CLR_WHITE && p.y == 6){
             if (chessBoard.getPiece(pos.x, pos.y-1) == null ) {
@@ -63,7 +67,7 @@ public class PawnMove implements IMove {
                 }
         }
         else if (chessBoard.getPiece(x, y).getColor() == IChess.ChessColor.CLR_BLACK){
-            if (chessBoard.getPiece(pos.x, pos.y+1) == null ) {
+            if (y+1 < 8  && chessBoard.getPiece(pos.x, pos.y+1) == null ) {
                 IChess.ChessPosition pos1 = new IChess.ChessPosition(x, y+1);
                 position.add(pos1);
             }
@@ -81,7 +85,7 @@ public class PawnMove implements IMove {
             }
         }
         else if (chessBoard.getPiece(x, y).getColor() == IChess.ChessColor.CLR_WHITE){
-            if (chessBoard.getPiece(pos.x, pos.y-1) == null ) {
+            if (y-1 >= 0 && chessBoard.getPiece(pos.x, pos.y-1) == null) {
                 IChess.ChessPosition pos1 = new IChess.ChessPosition(x, y-1);
                 position.add(pos1);
             }
@@ -94,6 +98,21 @@ public class PawnMove implements IMove {
                 position.add(pos4);
             }
         }
+
+
+        if(chessBoard.getPiece(x,y).getColor() == IChess.ChessColor.CLR_WHITE){
+            if (p.y == 0){
+               chessBoard.getPiece(x,y).setChessType(TYP_QUEEN);
+               chessBoard.getPiece(x, y).setChessMove(new QueenMove());
+            }
+        }
+       if(chessBoard.getPiece(x,y).getColor() == IChess.ChessColor.CLR_BLACK){
+           if (p.y == 7){
+             chessBoard.getPiece(x,y).setChessType(TYP_QUEEN);
+               chessBoard.getPiece(x, y).setChessMove(new QueenMove());
+       }
+    }
+
         return position;
     }
 }

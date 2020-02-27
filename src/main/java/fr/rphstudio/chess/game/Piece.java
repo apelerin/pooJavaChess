@@ -38,5 +38,12 @@ public class Piece{
         }
     }
 
+    public void setChessType(ChessType chessType){
+        this.chessType = chessType;
+    }
+    public void setChessMove(IMove pieceMove) {
+        this.pieceMove = pieceMove;
+    }
+
 }
 
