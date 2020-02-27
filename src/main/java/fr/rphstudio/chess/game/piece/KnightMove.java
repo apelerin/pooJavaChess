@@ -6,9 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KnightMove implements IMove {
-
+    /**
+     * initiate the function that will move
+     * the pieces on the board according
+     * to his position
+     * @param p
+     * @param chessBoard
+     * @return
+     */
     @Override
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
+
         int x = p.x;
         int y = p.y;
         ArrayList<IChess.ChessPosition> position = new ArrayList<IChess.ChessPosition>();

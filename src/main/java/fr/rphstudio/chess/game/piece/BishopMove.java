@@ -8,6 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BishopMove implements IMove {
+    /**
+     * initiate the function that will move
+     * the pieces on the board according
+     * to his position
+     * @param p
+     * @param chessBoard
+     * @return
+     */
 
     @Override
     // Il prend en paramètre la position de la pièce sur laquelle on a cliqué, et le board

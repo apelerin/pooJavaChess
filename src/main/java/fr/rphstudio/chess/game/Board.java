@@ -10,25 +10,46 @@ import java.util.Map;
 
 import static fr.rphstudio.chess.interf.IChess.ChessType.*;
 
+
+
 public class Board {
     private Piece[][] pieceList = new Piece[8][8];
     private int rowInitWhitePawn = 6;
     private int rowInitBlackPawn = 1;
 
+    /**
+     * return l'array list des piece
+     * @param x
+     * @param y
+     * @return
+     */
     public Piece getPiece(int x, int y) {
         return pieceList[x][y];
     }
 
+    /**
+     *function to remove the pieces in their positions
+     * @param pos
+     */
     public void removeMovingPiece(ChessPosition pos) {
         pieceList[pos.x][pos.y] = null;
     }
 
+    /**
+     * replacing the pieces
+     * @param movingPiece
+     * @param pos
+     */
     public void replacingPiece(Piece movingPiece, ChessPosition pos) {
         pieceList[pos.x][pos.y] = movingPiece;
     }
 
-    // Check if the king is threaten, since it is using getMove, there is no need to check the color, it is handle in
-    // each movement of the pieces
+    /**
+     *Check if the king is threaten, since it is using getMove, there is no need to check the color, it is handle in
+     * each movement of the pieces
+     * @param color
+     * @return ChessKingState of functuon king state
+     */
     public ChessKingState checkState (ChessColor color) {
         ChessPosition kingPos = getKingPos(color);
         for (int i = 0; i < pieceList.length; i++) {
@@ -44,6 +65,12 @@ public class Board {
         return ChessKingState.KING_SAFE;
     }
 
+    /**
+     * creation of a boolean to compare the two lists
+     * @param list
+     * @param pos2
+     * @return true or false the list is ==
+     */
     private Boolean comparePosInList(List<ChessPosition> list, ChessPosition pos2) {
         for (int i = 0; i < list.size(); i++)
         if (list.get(i).x == pos2.x && list.get(i).y == pos2.y)
@@ -51,6 +78,11 @@ public class Board {
         return false;
     }
 
+    /**
+     * king position of the echec for the king is danger
+     * @param color
+     * @return position of king
+     */
     private ChessPosition getKingPos(ChessColor color) {
         for (int i = 0; i < pieceList.length; i++) {
             for (int j = 0; j < pieceList[i].length; j++) {
@@ -63,6 +95,10 @@ public class Board {
         }
         return null;
     }
+
+    /**
+     * position of the pions
+     */
 
     HashMap<int[], ChessType> mapWhitePiece = new HashMap<int[], ChessType>() {
         {
@@ -90,6 +126,9 @@ public class Board {
         }
     };
 
+    /**
+     * create the board
+     */
     public Board() {
         for (int row = 0; row <= 7; row++) {
             for (int col = 0; col <= 7; col++) {
@@ -109,6 +148,11 @@ public class Board {
         }
     }
 
+    /**
+     * number of piece in the board
+     * @param color
+     * @return
+     */
     public int getNbRemainingPieces(ChessColor color) {
         int nbrPieces = 0;
         for (int i = 0; i < pieceList.length; i++) {

@@ -20,6 +20,11 @@ public class Piece{
     }
     public int nbrMoves = 0;
 
+    /**
+     *initiate the movement created in the piece package
+     * @param type
+     * @param color
+     */
     public Piece(ChessType type, ChessColor color) {
         this.chessType = type;
         this.chessColor = color;
