@@ -8,6 +8,7 @@ import fr.rphstudio.chess.interf.IChess.*;
 public class OneMove {
     static int index = 0;
 
+    private int indexItem;
     private ChessPosition pieceMoved;
     private ChessPosition pieceMovedPos;
     private boolean hasEaten;
@@ -15,6 +16,7 @@ public class OneMove {
     private ChessPosition pieceEatenPos;
 
     public OneMove(int index) {
+        this.indexItem = index;
         index++;
     }
 }
