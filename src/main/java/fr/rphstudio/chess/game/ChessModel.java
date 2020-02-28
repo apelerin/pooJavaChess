@@ -16,8 +16,8 @@ public class ChessModel implements IChess {
     private TimerSet timerB = new TimerSet();
 
     /**
-     * creation of a new board (table)
-     * it takes chessboard as a parameter
+     * Initialize the chessBoard
+     *
      *
      */
     private ChessModel() {
@@ -25,7 +25,7 @@ public class ChessModel implements IChess {
     }
 
     /**
-     * instance creation
+     * instance creation according to singleton
      * @return that return the single instance
      */
     public static ChessModel getInstance()
@@ -38,8 +38,7 @@ public class ChessModel implements IChess {
 
     /**
      * function to reset the board and start a new game
-     * @param "white Removed Pieces permet de Remove les pieces blanches
-     * @param "black Removed Pieces permet de Remove les pieces noir
+     *
      */
     @Override
     public void reinit() {
@@ -48,7 +47,6 @@ public class ChessModel implements IChess {
         blackRemovedPieces = new ArrayList<ChessType>();
         timerW = new TimerSet();
         timerB = new TimerSet();
-        // TODO reinit the time
     }
 
     /**
@@ -58,7 +56,6 @@ public class ChessModel implements IChess {
      * @throws EmptyCellException
      * @throws OutOfBoardException
      */
-
     @Override
     public ChessType getPieceType(ChessPosition p) throws EmptyCellException, OutOfBoardException {
         int positionX = p.x;
@@ -69,16 +66,18 @@ public class ChessModel implements IChess {
         catch (NullPointerException npe) {
             throw new EmptyCellException();
         }
+        catch (ArrayIndexOutOfBoundsException aio) {
+            throw new OutOfBoardException();
+        }
     }
 
     /**
-     * this allows you to know the color of the pieces in relation to their positions
+     * this allows you to know the color of the pieces by supplying it's position
      * @param p x/y position on the board where we want to get the piece color.
      * @return
      * @throws EmptyCellException
      * @throws OutOfBoardException
      */
-
     @Override
     public ChessColor getPieceColor(ChessPosition p) throws EmptyCellException, OutOfBoardException {
         int positionX = p.x;
@@ -95,7 +94,7 @@ public class ChessModel implements IChess {
     }
 
     /**
-     *this function lets you know the number of pieces remaining
+     * this function lets you know the number of pieces remaining by color
      * @param color the requested color of the pieces to count.
      * @return
      */
@@ -111,7 +110,7 @@ public class ChessModel implements IChess {
         return chessBoard.getPiece(p.x, p.y).getPieceMove().getMove(p, chessBoard);
     }
     /**
-     * this function allows you to list the position of the part and then move them
+     * this function allows you to list the position of a piece
      * @param p0 source position on the board.
      * @param p1 destination position on the board.
      */
@@ -164,7 +163,7 @@ public class ChessModel implements IChess {
     }
 
     /**
-     * get king state of the game in appel in the function
+     * get king state of the color passed in param
      * @param color the requested king color.
      * @return
      */
@@ -175,10 +174,10 @@ public class ChessModel implements IChess {
 
 
     /**
-     * function allowing to remove a part
+     * function allowing to remove a piece
      * @param color color of the removed pieces
-     * @return function whiteRemovedPieces
-     * @return function blackRemovedPieces
+     * @return ArrayList whiteRemovedPieces
+     * @return ArrayList blackRemovedPieces
      */
     @Override
     public List<ChessType> getRemovedPieces(ChessColor color) {
