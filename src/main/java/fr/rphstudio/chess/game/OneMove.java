@@ -65,6 +65,12 @@ public class OneMove {
         return false;
     }
 
+    /**
+     * undo the move that represent the instance of this object, according to his type
+     * (rook move, pawn transformed to queen, piece eaten or not...)
+     * @param chessBoard
+     * @return boolean 
+     */
     public boolean undoMove(Board chessBoard) {
         if (this.isPromoted) {
 
