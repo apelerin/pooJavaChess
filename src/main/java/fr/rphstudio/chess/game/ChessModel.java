@@ -10,8 +10,9 @@ import java.util.List;
 public class ChessModel implements IChess {
     private static ChessModel single_instance = null;
     private Board chessBoard;
-    private ArrayList<ChessType> whiteRemovedPieces = new ArrayList<ChessType>();
-    private ArrayList<ChessType> blackRemovedPieces = new ArrayList<ChessType>();
+    private ArrayList<RemovedPieces> whiteRemovedPieces = new ArrayList<>();
+    private ArrayList<RemovedPieces> blackRemovedPieces = new ArrayList<>();
+    ArrayList<OneMove> lastMoves = new ArrayList<>();
     private TimerSet timerW = new TimerSet();
     private TimerSet timerB = new TimerSet();
 
@@ -43,8 +44,9 @@ public class ChessModel implements IChess {
     @Override
     public void reinit() {
         chessBoard = new Board();
-        whiteRemovedPieces = new ArrayList<ChessType>();
-        blackRemovedPieces = new ArrayList<ChessType>();
+        whiteRemovedPieces = new ArrayList<RemovedPieces>();
+        blackRemovedPieces = new ArrayList<RemovedPieces>();
+        ArrayList<OneMove> lastMoves = new ArrayList<>();
         timerW = new TimerSet();
         timerB = new TimerSet();
     }
@@ -152,10 +154,10 @@ public class ChessModel implements IChess {
         if (chessBoard.getPiece(p1.x, p1.y) != null) {
             Piece pieceEaten = chessBoard.getPiece(p1.x, p1.y);
             if (pieceEaten.getColor() == ChessColor.CLR_WHITE) {
-                whiteRemovedPieces.add(pieceEaten.getType());
+                whiteRemovedPieces.add(new RemovedPieces(pieceEaten.getType()));
             }
             else {
-                blackRemovedPieces.add(pieceEaten.getType());
+                blackRemovedPieces.add(new RemovedPieces(pieceEaten.getType()));
             }
         }
         chessBoard.removeMovingPiece(p0);
@@ -182,9 +184,9 @@ public class ChessModel implements IChess {
     @Override
     public List<ChessType> getRemovedPieces(ChessColor color) {
         if (color == ChessColor.CLR_WHITE) {
-            return whiteRemovedPieces;
+            return RemovedPieces.convertToList(whiteRemovedPieces);
         }
-        return blackRemovedPieces;
+        return RemovedPieces.convertToList(blackRemovedPieces);
     }
 
     @Override
