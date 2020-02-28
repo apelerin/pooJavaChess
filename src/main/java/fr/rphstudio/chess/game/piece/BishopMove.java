@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BishopMove implements IMove {
+
     /**
      * initiate the function that will move
      * the pieces on the board according
@@ -16,16 +17,13 @@ public class BishopMove implements IMove {
      * @param chessBoard
      * @return
      */
-
     @Override
-    // Il prend en paramètre la position de la pièce sur laquelle on a cliqué, et le board
+    // Take in param the position of the piece and the board
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
-        //On créer des variables qui contiennent la position de la pièce cliquée
-        int x = p.x; //horizontale
-        int y = p.y; //verticale
-        //On créer une liste de ChessPosition
+        // Creation of variable containing the position of the piece
+        int x = p.x;
+        int y = p.y;
         ArrayList<IChess.ChessPosition> position = new ArrayList<IChess.ChessPosition>();
-        //On fait la droite de la pièce
         for (int i = p.y-1, j = p.x+1; i >= 0 && j < 8; i--, j++){
             IChess.ChessPosition pos = new IChess.ChessPosition();
             pos.y = i;
@@ -38,8 +36,6 @@ public class BishopMove implements IMove {
             else
                 position.add(pos);
         }
-
-        //Diagonale haut droite
         for (int i = p.y-1, j = p.x+1; i >= 0 && j < 8; i--, j++){
             IChess.ChessPosition pos = new IChess.ChessPosition();
             pos.y = i;
@@ -52,7 +48,6 @@ public class BishopMove implements IMove {
             else
                 position.add(pos);
         }
-        //Diagonale haut gauche
         for (int i = p.y-1, j = p.x-1; i >= 0 && j >= 0; i--, j--){
             IChess.ChessPosition pos = new IChess.ChessPosition();
             pos.y = i;
@@ -65,7 +60,6 @@ public class BishopMove implements IMove {
             else
                 position.add(pos);
         }
-        //Diagonale bas gauche
         for (int i = p.y+1, j = p.x-1; i < 8 && j >= 0; i++, j--){
             IChess.ChessPosition pos = new IChess.ChessPosition();
             pos.y = i;
@@ -78,7 +72,6 @@ public class BishopMove implements IMove {
             else
                 position.add(pos);
         }
-        //Diagonale bas droite
         for (int i = p.y+1, j = p.x+1; i < 8 && j < 8; i++, j++){
             IChess.ChessPosition pos = new IChess.ChessPosition();
             pos.y = i;

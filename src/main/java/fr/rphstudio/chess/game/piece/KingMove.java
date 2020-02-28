@@ -20,21 +20,13 @@ public class KingMove implements IMove {
     public List<IChess.ChessPosition> getMove(IChess.ChessPosition p, Board chessBoard) {
         int x = p.x;
         int y = p.y;
-        //bas
         IChess.ChessPosition pos = new IChess.ChessPosition(x, y+1);
-        //bas droite
         IChess.ChessPosition pos1 = new IChess.ChessPosition(x+1, y+1);
-        //droite
         IChess.ChessPosition pos2 = new IChess.ChessPosition(x+1, y);
-        //haut droite
         IChess.ChessPosition pos3 = new IChess.ChessPosition(x+1, y-1);
-        //haut
         IChess.ChessPosition pos4 = new IChess.ChessPosition(x, y-1);
-        //haut gauche
         IChess.ChessPosition pos5 = new IChess.ChessPosition(x-1, y-1);
-        //gauche
         IChess.ChessPosition pos6 = new IChess.ChessPosition(x-1, y);
-        //bas gauche
         IChess.ChessPosition pos7 = new IChess.ChessPosition(x-1, y+1);
         ArrayList<IChess.ChessPosition> position = new ArrayList<IChess.ChessPosition>();
 
@@ -119,6 +111,12 @@ public class KingMove implements IMove {
         return position;
     }
 
+    /**
+     * Check the short castle move, toward the closest rook
+     * @param p
+     * @param chessBoard
+     * @param position
+     */
     public void checkShortCastle(IChess.ChessPosition p, Board chessBoard, ArrayList<IChess.ChessPosition> position){
         IChess.ChessPosition castleShort = new IChess.ChessPosition(p.x+3, p.y);
         if (p.x+3 < 8 && chessBoard.getPiece(p.x+3, p.y) != null) {
@@ -130,6 +128,12 @@ public class KingMove implements IMove {
         }
     }
 
+    /**
+     * Check the long castle, toward the farther rook
+     * @param p
+     * @param chessBoard
+     * @param position
+     */
     public void checkLongCastle(IChess.ChessPosition p, Board chessBoard, ArrayList<IChess.ChessPosition> position){
         IChess.ChessPosition castleShort = new IChess.ChessPosition(p.x-4, p.y);
         if (p.x-4 >= 0 && chessBoard.getPiece(p.x-4, p.y) != null) {
