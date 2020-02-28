@@ -156,16 +156,17 @@ public class ChessModel implements IChess {
         if (chessBoard.getPiece(p1.x, p1.y) != null) {
             Piece pieceEaten = chessBoard.getPiece(p1.x, p1.y);
             lastMoves.add(new OneMove(movingPiece, p0, pieceEaten, p1));
+            int index = lastMoves.get(lastMoves.size() - 1).getIndexItem();
             if (pieceEaten.getColor() == ChessColor.CLR_WHITE) {
-                whiteRemovedPieces.add(new RemovedPieces(pieceEaten.getType()));
+                whiteRemovedPieces.add(new RemovedPieces(pieceEaten.getType(), index));
             }
             else {
-                blackRemovedPieces.add(new RemovedPieces(pieceEaten.getType()));
+                blackRemovedPieces.add(new RemovedPieces(pieceEaten.getType(), index));
             }
             chessBoard.removeMovingPiece(p0);
             chessBoard.replacingPiece(movingPiece, p1);
         } else {
-            lastMoves.add(new OneMove(movingPiece, p0));
+            lastMoves.add(new OneMove(movingPiece, p0, p1));
             chessBoard.removeMovingPiece(p0);
             chessBoard.replacingPiece(movingPiece, p1);
         }
@@ -198,7 +199,18 @@ public class ChessModel implements IChess {
 
     @Override
     public boolean undoLastMove() {
-        return false;
+        if (lastMoves.size() == 1) {
+            lastMoves.get(0).undoMove(chessBoard);
+            lastMoves.remove(0);
+            return false;
+        }
+        OneMove last = lastMoves.get(lastMoves.size() - 1);
+        if (last.undoMove(chessBoard)) {
+            RemovedPieces.seekAndDestroy(blackRemovedPieces, last.getIndexItem());
+            RemovedPieces.seekAndDestroy(whiteRemovedPieces, last.getIndexItem());
+        }
+        lastMoves.remove(lastMoves.size() - 1);
+        return true;
     }
 
     @Override

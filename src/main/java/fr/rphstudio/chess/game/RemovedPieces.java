@@ -15,9 +15,13 @@ public class RemovedPieces {
     private int index;
     private ChessType type;
 
-    public RemovedPieces(ChessType type) {
-        //this.index = i;
+    public RemovedPieces(ChessType type, int i) {
+        this.index = i;
         this.type = type;
+    }
+
+    public int getIndex() {
+        return index;
     }
 
     public ChessType getType() {
@@ -30,5 +34,13 @@ public class RemovedPieces {
             list.add(listRemovedPiece.get(i).getType());
         }
         return list;
+    }
+
+    public static void seekAndDestroy(ArrayList<RemovedPieces> list, int indexToRemove) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getIndex() == indexToRemove) {
+                list.remove(i);
+            }
+        }
     }
 }
