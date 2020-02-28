@@ -21,11 +21,11 @@ public class Piece{
     private int nbrMoves = 0;
 
     public int getNbrMoves() {
-        return nbrMoves;
+        return this.nbrMoves;
     }
 
     public void incrementNbrMoves() {
-        nbrMoves++;
+        this.nbrMoves++;
     }
 
     public void resetMoves() {

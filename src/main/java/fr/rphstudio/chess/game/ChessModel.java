@@ -106,11 +106,26 @@ public class ChessModel implements IChess {
         return chessBoard.getNbRemainingPieces(color);
     }
 
+    public List<ChessPosition> checkFurtherMove(List<ChessPosition> rawList, ChessPosition p) {
+        ArrayList<ChessPosition> cleanList = new ArrayList<>();
+        ChessColor color = chessBoard.getPiece(p.x, p.y).getColor();
+        for (int i = 0; i < rawList.size(); i++) {
+            movePiece(p, rawList.get(i));
+            if (chessBoard.checkState(color) == ChessKingState.KING_THREATEN) {
+                undoLastMove();
+                continue;
+            }
+            cleanList.add(rawList.get(i));
+            undoLastMove();
+        }
+        return cleanList;
+    }
 
     @Override
     public List<ChessPosition> getPieceMoves(ChessPosition p) {
-        return chessBoard.getPiece(p.x, p.y).getPieceMove().getMove(p, chessBoard);
+        return checkFurtherMove(chessBoard.getPiece(p.x, p.y).getPieceMove().getMove(p, chessBoard), p);
     }
+
     /**
      * this function allows you to list the position of a piece
      * @param p0 source position on the board.
