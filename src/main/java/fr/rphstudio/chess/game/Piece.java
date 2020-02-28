@@ -8,17 +8,19 @@ public class Piece{
     private ChessType chessType;
     private ChessColor chessColor;
     private IMove pieceMove;
+    private int nbrMoves = 0;
 
     public ChessType getType() {
         return this.chessType;
     }
+
     public ChessColor getColor() {
         return this.chessColor;
     }
+
     public IMove getPieceMove() {
         return this.pieceMove;
     }
-    private int nbrMoves = 0;
 
     public int getNbrMoves() {
         return this.nbrMoves;

@@ -115,8 +115,8 @@ public class ChessModel implements IChess {
                 undoLastMove();
                 continue;
             }
-            cleanList.add(rawList.get(i));
             undoLastMove();
+            cleanList.add(rawList.get(i));
         }
         return cleanList;
     }

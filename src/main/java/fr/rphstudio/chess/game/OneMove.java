@@ -71,9 +71,7 @@ public class OneMove {
         }
         else if (this.isRook) {
             ChessPosition kingPos = chessBoard.getKingPos(this.pieceMoved.getColor());
-            this.pieceMoved.resetMoves();
             Piece king = chessBoard.getPiece(kingPos.x, kingPos.y);
-            king.resetMoves();
             chessBoard.replacingPiece(this.pieceMoved, this.oldRookPos);
             if (king.getColor() == ChessColor.CLR_WHITE) {
                 chessBoard.replacingPiece(king, new ChessPosition(4, 7));
@@ -83,15 +81,19 @@ public class OneMove {
             }
             chessBoard.removeMovingPiece(kingPos);
             chessBoard.removeMovingPiece(this.pieceMovedPos);
+            this.pieceMoved.resetMoves();
+            king.resetMoves();
         }
         else if (this.hasEaten){
             chessBoard.replacingPiece(this.pieceMoved, this.pieceMovedPos);
             chessBoard.replacingPiece(this.pieceEaten, this.pieceEatenPos);
+            this.pieceMoved.resetMoves();
             return true;
         }
         else {
             chessBoard.replacingPiece(this.pieceMoved, this.pieceMovedPos);
             chessBoard.removeMovingPiece(this.newPos);
+            this.pieceMoved.resetMoves();
         }
         return false;
     }
