@@ -83,7 +83,7 @@ public class Board {
      * @param color
      * @return position of king
      */
-    private ChessPosition getKingPos(ChessColor color) {
+    public ChessPosition getKingPos(ChessColor color) {
         for (int i = 0; i < pieceList.length; i++) {
             for (int j = 0; j < pieceList[i].length; j++) {
                 if (pieceList[i][j] == null)

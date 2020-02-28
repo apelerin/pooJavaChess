@@ -18,7 +18,19 @@ public class Piece{
     public IMove getPieceMove() {
         return this.pieceMove;
     }
-    public int nbrMoves = 0;
+    private int nbrMoves = 0;
+
+    public int getNbrMoves() {
+        return nbrMoves;
+    }
+
+    public void incrementNbrMoves() {
+        nbrMoves++;
+    }
+
+    public void resetMoves() {
+        this.nbrMoves = 0;
+    }
 
     /**
      *initiate the movement created in the piece package

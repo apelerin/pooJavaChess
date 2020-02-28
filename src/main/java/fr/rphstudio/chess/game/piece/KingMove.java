@@ -50,7 +50,7 @@ public class KingMove implements IMove {
                 position.add(pos1);
         }
 
-        if (pos2.y < 8){
+        if (pos2.y < 8 && pos2.x < 8){
             if (chessBoard.getPiece(pos2.x, pos2.y) != null){
                 if (chessBoard.getPiece(pos2.x, pos2.y).getColor() != chessBoard.getPiece(x, y).getColor()){
                     position.add(pos2);
@@ -120,7 +120,7 @@ public class KingMove implements IMove {
     public void checkShortCastle(IChess.ChessPosition p, Board chessBoard, ArrayList<IChess.ChessPosition> position){
         IChess.ChessPosition castleShort = new IChess.ChessPosition(p.x+3, p.y);
         if (p.x+3 < 8 && chessBoard.getPiece(p.x+3, p.y) != null) {
-            if (chessBoard.getPiece(p.x, p.y).nbrMoves == 0 && chessBoard.getPiece(p.x + 3, p.y).getType() == TYP_ROOK && chessBoard.getPiece(p.x + 3, p.y).nbrMoves == 0) {
+            if (chessBoard.getPiece(p.x, p.y).getNbrMoves() == 0 && chessBoard.getPiece(p.x + 3, p.y).getType() == TYP_ROOK && chessBoard.getPiece(p.x + 3, p.y).getNbrMoves() == 0) {
                 if (chessBoard.getPiece(p.x + 1, p.y) == null && chessBoard.getPiece(p.x + 2, p.y) == null) {
                     position.add(castleShort);
                 }
@@ -137,7 +137,7 @@ public class KingMove implements IMove {
     public void checkLongCastle(IChess.ChessPosition p, Board chessBoard, ArrayList<IChess.ChessPosition> position){
         IChess.ChessPosition castleShort = new IChess.ChessPosition(p.x-4, p.y);
         if (p.x-4 >= 0 && chessBoard.getPiece(p.x-4, p.y) != null) {
-            if (chessBoard.getPiece(p.x, p.y).nbrMoves == 0 && chessBoard.getPiece(p.x - 4, p.y).getType() == TYP_ROOK && chessBoard.getPiece(p.x - 4, p.y).nbrMoves == 0) {
+            if (chessBoard.getPiece(p.x, p.y).getNbrMoves() == 0 && chessBoard.getPiece(p.x - 4, p.y).getType() == TYP_ROOK && chessBoard.getPiece(p.x - 4, p.y).getNbrMoves() == 0) {
                 if (chessBoard.getPiece(p.x - 1, p.y) == null && chessBoard.getPiece(p.x - 2, p.y) == null && chessBoard.getPiece(p.x - 3, p.y) == null) {
                     position.add(castleShort);
                 }

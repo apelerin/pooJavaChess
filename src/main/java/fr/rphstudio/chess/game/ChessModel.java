@@ -119,7 +119,7 @@ public class ChessModel implements IChess {
     @Override
     public void movePiece(ChessPosition p0, ChessPosition p1) {
         Piece movingPiece = chessBoard.getPiece(p0.x, p0.y);
-        movingPiece.nbrMoves++;
+        movingPiece.incrementNbrMoves();
         if (chessBoard.getPiece(p0.x, p0.y).getType() == ChessType.TYP_KING){
             if (p0.x == 4 && p1.x == 7){
                 Piece rookCastle = new Piece(ChessType.TYP_ROOK, chessBoard.getPiece(p0.x, p0.y).getColor());
@@ -129,7 +129,7 @@ public class ChessModel implements IChess {
                 ChessPosition rookPlacement = new ChessPosition(p1.x-2, p1.y);
                 chessBoard.replacingPiece(movingPiece, kingPlacement);
                 chessBoard.replacingPiece(rookCastle, rookPlacement);
-                lastMoves.add(new OneMove(movingPiece, p0, true));
+                lastMoves.add(new OneMove(rookCastle, rookPlacement, p1, true));
                 return;
             }
             if (p0.x == 4 && p1.x == 0){
@@ -140,7 +140,7 @@ public class ChessModel implements IChess {
                 ChessPosition rookPlacement = new ChessPosition(p1.x+3, p1.y);
                 chessBoard.replacingPiece(movingPiece, kingPlacement);
                 chessBoard.replacingPiece(rookCastle, rookPlacement);
-                lastMoves.add(new OneMove(movingPiece, p0, true));
+                lastMoves.add(new OneMove(rookCastle, rookPlacement, p1, true));
                 return;
             }
         }

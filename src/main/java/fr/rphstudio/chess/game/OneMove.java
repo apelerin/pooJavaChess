@@ -21,6 +21,7 @@ public class OneMove {
 
     // Attribute used by the rook movement
     private boolean isRook;
+    private ChessPosition oldRookPos;
 
     public int getIndexItem() {
         return indexItem;
@@ -48,12 +49,13 @@ public class OneMove {
     }
 
     // Constructor for rook move
-    public OneMove(Piece pieceMoved, ChessPosition oldRookPos, boolean rook) {
+    public OneMove(Piece pieceMoved, ChessPosition newRookPos, ChessPosition oldRookPos, boolean rook) {
         this.indexItem = index;
         index++;
         this.isRook = rook;
-        this.pieceMovedPos = oldRookPos;
+        this.pieceMovedPos = newRookPos;
         this.pieceMoved = pieceMoved;
+        this.oldRookPos = oldRookPos;
     }
 
     private boolean checkIfPawnWillPromote() {
@@ -68,7 +70,19 @@ public class OneMove {
 
         }
         else if (this.isRook) {
-
+            ChessPosition kingPos = chessBoard.getKingPos(this.pieceMoved.getColor());
+            this.pieceMoved.resetMoves();
+            Piece king = chessBoard.getPiece(kingPos.x, kingPos.y);
+            king.resetMoves();
+            chessBoard.replacingPiece(this.pieceMoved, this.oldRookPos);
+            if (king.getColor() == ChessColor.CLR_WHITE) {
+                chessBoard.replacingPiece(king, new ChessPosition(4, 7));
+            }
+            else {
+                chessBoard.replacingPiece(king, new ChessPosition(4, 0));
+            }
+            chessBoard.removeMovingPiece(kingPos);
+            chessBoard.removeMovingPiece(this.pieceMovedPos);
         }
         else if (this.hasEaten){
             chessBoard.replacingPiece(this.pieceMoved, this.pieceMovedPos);
