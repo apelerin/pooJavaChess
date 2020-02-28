@@ -129,6 +129,7 @@ public class ChessModel implements IChess {
                 ChessPosition rookPlacement = new ChessPosition(p1.x-2, p1.y);
                 chessBoard.replacingPiece(movingPiece, kingPlacement);
                 chessBoard.replacingPiece(rookCastle, rookPlacement);
+                lastMoves.add(new OneMove(movingPiece, p0, true));
                 return;
             }
             if (p0.x == 4 && p1.x == 0){
@@ -139,6 +140,7 @@ public class ChessModel implements IChess {
                 ChessPosition rookPlacement = new ChessPosition(p1.x+3, p1.y);
                 chessBoard.replacingPiece(movingPiece, kingPlacement);
                 chessBoard.replacingPiece(rookCastle, rookPlacement);
+                lastMoves.add(new OneMove(movingPiece, p0, true));
                 return;
             }
         }
@@ -153,15 +155,20 @@ public class ChessModel implements IChess {
         }
         if (chessBoard.getPiece(p1.x, p1.y) != null) {
             Piece pieceEaten = chessBoard.getPiece(p1.x, p1.y);
+            lastMoves.add(new OneMove(movingPiece, p0, pieceEaten, p1));
             if (pieceEaten.getColor() == ChessColor.CLR_WHITE) {
                 whiteRemovedPieces.add(new RemovedPieces(pieceEaten.getType()));
             }
             else {
                 blackRemovedPieces.add(new RemovedPieces(pieceEaten.getType()));
             }
+            chessBoard.removeMovingPiece(p0);
+            chessBoard.replacingPiece(movingPiece, p1);
+        } else {
+            lastMoves.add(new OneMove(movingPiece, p0));
+            chessBoard.removeMovingPiece(p0);
+            chessBoard.replacingPiece(movingPiece, p1);
         }
-        chessBoard.removeMovingPiece(p0);
-        chessBoard.replacingPiece(movingPiece, p1);
     }
 
     /**
