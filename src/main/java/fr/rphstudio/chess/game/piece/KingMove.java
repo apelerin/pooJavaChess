@@ -121,17 +121,22 @@ public class KingMove implements IMove {
 
     public void checkShortCastle(IChess.ChessPosition p, Board chessBoard, ArrayList<IChess.ChessPosition> position){
         IChess.ChessPosition castleShort = new IChess.ChessPosition(p.x+3, p.y);
-        if (chessBoard.getPiece(p.x, p.y).nbrMoves == 0 && chessBoard.getPiece(p.x+3, p.y).getType() == TYP_ROOK && chessBoard.getPiece(p.x+3, p.y).nbrMoves == 0){
-            if (chessBoard.getPiece(p.x+1, p.y) == null && chessBoard.getPiece(p.x+2, p.y) == null){
-                position.add(castleShort);
+        if (p.x+3 < 8 && chessBoard.getPiece(p.x+3, p.y) != null) {
+            if (chessBoard.getPiece(p.x, p.y).nbrMoves == 0 && chessBoard.getPiece(p.x + 3, p.y).getType() == TYP_ROOK && chessBoard.getPiece(p.x + 3, p.y).nbrMoves == 0) {
+                if (chessBoard.getPiece(p.x + 1, p.y) == null && chessBoard.getPiece(p.x + 2, p.y) == null) {
+                    position.add(castleShort);
+                }
             }
         }
     }
+
     public void checkLongCastle(IChess.ChessPosition p, Board chessBoard, ArrayList<IChess.ChessPosition> position){
         IChess.ChessPosition castleShort = new IChess.ChessPosition(p.x-4, p.y);
-        if (chessBoard.getPiece(p.x, p.y).nbrMoves == 0 && chessBoard.getPiece(p.x-4, p.y).getType() == TYP_ROOK && chessBoard.getPiece(p.x-4, p.y).nbrMoves == 0){
-            if (chessBoard.getPiece(p.x-1, p.y) == null && chessBoard.getPiece(p.x-2, p.y) == null && chessBoard.getPiece(p.x-3, p.y) == null){
-                position.add(castleShort);
+        if (p.x-4 >= 0 && chessBoard.getPiece(p.x-4, p.y) != null) {
+            if (chessBoard.getPiece(p.x, p.y).nbrMoves == 0 && chessBoard.getPiece(p.x - 4, p.y).getType() == TYP_ROOK && chessBoard.getPiece(p.x - 4, p.y).nbrMoves == 0) {
+                if (chessBoard.getPiece(p.x - 1, p.y) == null && chessBoard.getPiece(p.x - 2, p.y) == null && chessBoard.getPiece(p.x - 3, p.y) == null) {
+                    position.add(castleShort);
+                }
             }
         }
     }

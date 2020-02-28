@@ -120,7 +120,7 @@ public class ChessModel implements IChess {
         Piece movingPiece = chessBoard.getPiece(p0.x, p0.y);
         movingPiece.nbrMoves++;
         if (chessBoard.getPiece(p0.x, p0.y).getType() == ChessType.TYP_KING){
-            if (p1.x + p0.x == 11 ){
+            if (p0.x == 4 && p1.x == 7){
                 Piece rookCastle = new Piece(ChessType.TYP_ROOK, chessBoard.getPiece(p0.x, p0.y).getColor());
                 chessBoard.removeMovingPiece(p0);
                 chessBoard.removeMovingPiece(p1);
@@ -130,7 +130,7 @@ public class ChessModel implements IChess {
                 chessBoard.replacingPiece(rookCastle, rookPlacement);
                 return;
             }
-            if (p1.x + p0.x == 4 ){
+            if (p0.x == 4 && p1.x == 0){
                 Piece rookCastle = new Piece(ChessType.TYP_ROOK, chessBoard.getPiece(p0.x, p0.y).getColor());
                 chessBoard.removeMovingPiece(p0);
                 chessBoard.removeMovingPiece(p1);
@@ -138,6 +138,15 @@ public class ChessModel implements IChess {
                 ChessPosition rookPlacement = new ChessPosition(p1.x+3, p1.y);
                 chessBoard.replacingPiece(movingPiece, kingPlacement);
                 chessBoard.replacingPiece(rookCastle, rookPlacement);
+                return;
+            }
+        }
+        if (chessBoard.getPiece(p0.x, p0.y).getType() == ChessType.TYP_PAWN) {
+            if (p1.y == 0 || p1.y == 7) {
+                Piece newQueen = new Piece(ChessType.TYP_QUEEN, chessBoard.getPiece(p0.x, p0.y).getColor());
+                chessBoard.removeMovingPiece(p0);
+                chessBoard.removeMovingPiece(p1);
+                chessBoard.replacingPiece(newQueen, p1);
                 return;
             }
         }
